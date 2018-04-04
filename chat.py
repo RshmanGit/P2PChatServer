@@ -20,5 +20,6 @@ while True:
     c, a = sock.accept()
     cThread = threading.Thread(target=handler, args = (c,a))
     cThread.daemon = True
+    cThread.start()
     connections.append(c)
     print(connections)
