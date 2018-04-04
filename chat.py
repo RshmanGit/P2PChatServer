@@ -12,6 +12,7 @@ def handler(c, a):
         for connection in connections:
             connection.send(bytes(data))
         if not data:
+            connections.remove(c)
             c.close()
             break
 
